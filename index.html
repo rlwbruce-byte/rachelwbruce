@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rachel Bruce — VP of Marketing | Career Impact Report</title>
+<meta name="description" content="Rachel Bruce — data-driven B2B marketing leader, 15+ years across cybersecurity, AI/robotics, and technology distribution.">
+<meta property="og:title" content="Rachel Bruce — Career Impact Report">
+<meta property="og:description" content="Data-driven B2B marketing leader, 15+ years across cybersecurity, AI/robotics, and technology distribution.">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --pink:#ee2f8b;
+    --pink-deep:#c41e6f;
+    --ink:#232323;
+    --paper:#faf6f2;
+    --paper-dim:#f0ebe4;
+    --card:#ffffff;
+    --mono: 'IBM Plex Mono', monospace;
+    --disp: 'Anton', sans-serif;
+    --body: 'Space Grotesk', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{ background:var(--paper); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; }
+
+  .hero{ background:var(--ink); color:var(--paper); padding:64px 40px 48px; position:relative; overflow:hidden; }
+  .hero::after{ content:""; position:absolute; inset:0;
+    background: linear-gradient(180deg, transparent 60%, var(--pink) 60%, var(--pink) 61%, transparent 61%);
+    opacity:.5; pointer-events:none; }
+  .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--pink); margin-bottom:18px; }
+  h1.name{ font-family:var(--disp); font-size:clamp(48px, 9vw, 108px); line-height:.88; letter-spacing:-.01em; text-transform:uppercase; }
+  h1.name span{ color:var(--pink); }
+  .role-line{ font-family:var(--mono); font-size:15px; margin-top:16px; max-width:600px; color:#d8d3ca; line-height:1.6; }
+  .contact-line{ font-family:var(--mono); font-size:12px; margin-top:10px; color:#8f887c; }
+  .contact-line a{ color:#8f887c; }
+  .bio{ font-size:15.5px; line-height:1.65; max-width:640px; margin-top:22px; color:#eae6df; }
+  .bio strong{ color:var(--pink); font-weight:600; }
+  .stat-row{ display:flex; gap:0; margin-top:44px; flex-wrap:wrap; border-top:1px solid #4a4a4a; }
+  .stat{ flex:1; min-width:150px; padding:18px 20px 4px 0; border-right:1px solid #4a4a4a; }
+  .stat:last-child{border-right:none;}
+  .stat .num{ font-family:var(--disp); font-size:32px; color:var(--pink); }
+  .stat .label{ font-family:var(--mono); font-size:11px; color:#a8a29a; text-transform:uppercase; letter-spacing:.06em; }
+
+  /* nav */
+  .section-nav{ display:flex; gap:0; background:var(--ink); border-top:1px solid #4a4a4a; overflow-x:auto; }
+  .section-nav a{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em;
+    color:#a8a29a; text-decoration:none; padding:14px 20px; white-space:nowrap; border-right:1px solid #4a4a4a; }
+  .section-nav a:hover{ color:var(--pink); }
+
+  .filter-wrap{ position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:2px solid var(--ink); padding:18px 40px; }
+  .filter-label{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:#8a8378; margin-bottom:10px; }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag-btn{ font-family:var(--mono); font-size:12.5px; padding:8px 14px; background:var(--card); border:1.5px solid var(--ink);
+    border-radius:2px; cursor:pointer; text-transform:uppercase; letter-spacing:.03em; transition:all .15s ease; color:var(--ink); }
+  .tag-btn:hover{ background:var(--paper-dim); }
+  .tag-btn.active{ background:var(--pink); color:#fff; border-color:var(--pink); }
+  .clear-btn{ font-family:var(--mono); font-size:12px; color:#8a8378; text-decoration:underline; background:none; border:none;
+    cursor:pointer; padding:8px 4px; display:none; }
+  .clear-btn.show{ display:inline-block; }
+
+  .rail{ max-width:920px; margin:0 auto; padding:48px 40px 60px; position:relative; }
+  .rail::before{ content:""; position:absolute; left:40px; top:48px; bottom:60px; width:2px; background:var(--ink); opacity:.15; }
+  .entry{ position:relative; padding-left:44px; margin-bottom:38px; }
+  .entry.hidden{ display:none; }
+  .placeholder-flag{ font-family:var(--mono); font-size:10.5px; color:var(--pink-deep); background:#fdeaf2;
+    border:1px solid var(--pink); padding:2px 8px; border-radius:2px; display:inline-block; margin-left:8px; }
+  .dot{ position:absolute; left:-5px; top:6px; width:12px; height:12px; border-radius:50%; background:var(--pink);
+    border:2px solid var(--paper); box-shadow:0 0 0 2px var(--ink); }
+  .entry-head{ display:flex; justify-content:space-between; align-items:baseline; flex-wrap:wrap; gap:6px 16px; margin-bottom:4px; }
+  .company{ font-family:var(--disp); font-size:26px; text-transform:uppercase; letter-spacing:.01em; }
+  .dates{ font-family:var(--mono); font-size:12px; color:#8a8378; white-space:nowrap; }
+  .title-role{ font-family:var(--mono); font-size:13px; color:var(--pink-deep); margin-bottom:2px; }
+  .context-line{ font-size:13px; color:#6b6459; margin-bottom:14px; font-style:italic; }
+  .scope-chips{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
+  .scope-chip{ font-family:var(--mono); font-size:10.5px; background:var(--ink); color:var(--paper); padding:3px 9px; border-radius:2px; }
+  .bullets{ list-style:none; }
+  .bullets li{ font-size:14.5px; line-height:1.55; margin-bottom:8px; padding-left:16px; position:relative; transition:opacity .2s ease; }
+  .bullets li::before{ content:"—"; position:absolute; left:0; color:var(--pink); }
+  .bullets li.dim{ opacity:.22; }
+  .entry-tags{ display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+  .mini-tag{ font-family:var(--mono); font-size:10px; text-transform:uppercase; padding:3px 8px; border:1px solid #ccc4b8;
+    border-radius:2px; color:#8a8378; }
+  .mini-tag.match{ border-color:var(--pink); color:var(--pink-deep); background:#fdeaf2; }
+
+  .empty-state{ font-family:var(--mono); text-align:center; padding:60px 20px; color:#8a8378; display:none; }
+  .empty-state.show{ display:block; }
+
+  /* generic section shell */
+  .section{ max-width:920px; margin:0 auto; padding:60px 40px; border-top:2px solid var(--ink); }
+  .section-title{ font-family:var(--disp); font-size:clamp(28px,4vw,42px); text-transform:uppercase; margin-bottom:8px; }
+  .section-sub{ font-family:var(--mono); font-size:12px; color:#8a8378; margin-bottom:32px; text-transform:uppercase; letter-spacing:.08em; }
+
+  /* tech stack */
+  .stack-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(240px,1fr)); gap:24px; }
+  .stack-cat h4{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--pink-deep); margin-bottom:10px; }
+  .stack-pills{ display:flex; flex-wrap:wrap; gap:6px; }
+  .pill{ font-size:12.5px; background:var(--card); border:1px solid #ddd6ca; padding:5px 11px; border-radius:14px; }
+
+  /* education */
+  .edu-block{ display:flex; justify-content:space-between; flex-wrap:wrap; gap:16px; align-items:flex-start; }
+  .edu-block .school{ font-family:var(--disp); font-size:22px; text-transform:uppercase; }
+  .edu-block .degree{ font-size:14px; margin-top:6px; max-width:520px; line-height:1.5; }
+  .edu-block .yr{ font-family:var(--mono); font-size:12px; color:#8a8378; }
+
+  /* personal */
+  .personal-toggle{ width:100%; text-align:left; background:var(--ink); color:var(--paper); border:none;
+    padding:20px 40px; font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.1em;
+    cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
+  .personal-toggle:hover{ background:#333; }
+  .personal-toggle .plus{ font-family:var(--disp); font-size:20px; color:var(--pink); transition:transform .2s ease; }
+  .personal-toggle.open .plus{ transform:rotate(45deg); }
+  .personal-panel{ max-height:0; overflow:hidden; transition:max-height .35s ease; background:var(--paper-dim); }
+  .personal-panel.open{ max-height:1600px; }
+  .personal-grid{ max-width:920px; margin:0 auto; padding:40px 40px 50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:28px; }
+  .p-card .p-label{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--pink-deep); margin-bottom:8px; }
+  .p-card p{ font-size:14px; line-height:1.55; }
+
+  footer{ text-align:center; padding:40px; font-family:var(--mono); font-size:12px; color:#8a8378; border-top:1px solid #ddd6ca; }
+
+  @media (max-width: 640px){
+    .hero{ padding:40px 20px 32px; } .filter-wrap{ padding:14px 20px; } .rail{ padding:32px 20px 40px; }
+    .rail::before{ left:20px; } .entry{ padding-left:30px; } .section{ padding:44px 20px; }
+    .personal-toggle{ padding:18px 20px; } .personal-grid{ padding:32px 20px 40px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="kicker">Career Impact Report — Filterable Edition</div>
+  <h1 class="name">Rachel <span>Bruce</span></h1>
+  <div class="role-line">VP of Marketing, Continuous · Where revenue growth is amplified by cross-functional alignment, data, and operational precision.</div>
+  <div class="contact-line">Buffalo Grove, IL · rlwbruce@gmail.com · 847-609-5800 · linkedin.com/in/rachelwbruce</div>
+  <p class="bio">Data-driven marketing leader with 15+ years building and scaling high-impact marketing functions across cybersecurity, AI/robotics, and technology distribution — known for aligning GTM strategy to business objectives and turning pipeline, revenue, and brand authority into repeatable systems. <strong>Systems and tools have always been core to how I work</strong> — deep fluency across CRM, marketing automation, and analytics stacks — so extending that into hands-on AI adoption, from custom agent systems to automated GTM workflows, has been a natural evolution rather than a pivot.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">15+</div><div class="label">Years B2B Marketing</div></div>
+    <div class="stat"><div class="num">6x</div><div class="label">Teams Built & Led</div></div>
+    <div class="stat"><div class="num">$20M+</div><div class="label">Pipeline Sourced (career)</div></div>
+    <div class="stat"><div class="num">14</div><div class="label">Largest Team Managed</div></div>
+  </div>
+</div>
+<div class="section-nav">
+  <a href="#timeline">Experience</a>
+  <a href="#stack">Tech Stack</a>
+  <a href="#education">Education</a>
+  <a href="#personal">Beyond the Title</a>
+</div>
+
+<div class="filter-wrap" id="timeline">
+  <div class="filter-label">Filter by focus — click one or stack multiple</div>
+  <div class="tags" id="tagBar"></div>
+</div>
+
+<div class="rail" id="rail"></div>
+<div class="empty-state" id="emptyState">No entries match that combination — try clearing a filter.</div>
+
+<div class="section" id="stack">
+  <div class="section-title">Tech Stack</div>
+  <div class="section-sub">Tools & platforms across the funnel</div>
+  <div class="stack-grid" id="stackGrid"></div>
+</div>
+
+<div class="section" id="education">
+  <div class="section-title">Education</div>
+  <div class="edu-block">
+    <div>
+      <div class="school">University of Missouri</div>
+      <div class="degree">Bachelor of Science, Business Administration — Marketing Major, Economics Minor. Scholarship athlete, University Swimming & Diving Team.</div>
+    </div>
+    <div class="yr">Columbia, MO</div>
+  </div>
+</div>
+
+<button class="personal-toggle" id="personalToggle">
+  <span>Beyond the Title — get to know Rachel</span>
+  <span class="plus">+</span>
+</button>
+<div class="personal-panel" id="personalPanel">
+  <div class="personal-grid" id="personal"></div>
+</div>
+
+<footer>linkedin.com/in/RachelWBruce — click any tag above to see how the story reshapes itself</footer>
+
+<script>
+const CATEGORIES = ["Revenue Marketing","Product Marketing","Partner/Channel","Start-Up/Scale-Up","Cybersecurity","AI & Tech"];
+
+const DATA = [
+  {
+    company:"Continuous", role:"VP of Marketing", dates:"Sept 2025 – Present",
+    context:"B2B SaaS building embedded revenue infrastructure connecting Salesforce and NetSuite, automating quote-to-cash for complex usage-based and hybrid pricing models.",
+    scope:[],
+    bullets:[
+      {text:"Built the marketing function from the ground up — brand, messaging, product marketing, demand generation, and content across a three-product portfolio.", tags:["Start-Up/Scale-Up","Product Marketing"]},
+      {text:"Designed and shipped a proprietary AI-agent GTM operating system — nine custom agents (prospect research, competitor intelligence, case studies, ad copy, outreach, content, campaign planning, LinkedIn, performance reporting) on a versioned company knowledge base, packaged as an internal Claude Code plugin for team-wide distribution.", tags:["AI & Tech"]},
+      {text:"Automated competitor intelligence across 9 direct competitors with a daily monitoring pipeline, publishing shareable reports the sales team accesses without needing repo access.", tags:["AI & Tech"]},
+      {text:"Built a full-funnel video content engine — 16+ product video kits (titles, descriptions, thumbnails, cross-channel repurposing) across three dedicated YouTube channels.", tags:["Revenue Marketing"]},
+      {text:"Led the company's brand narrative overhaul, translating technical positioning into a buyer-language story adopted across sales, web, and campaign materials.", tags:["Product Marketing"]},
+      {text:"Manage the paid media program (Google Search & LinkedIn, agency-run) and built the reporting infrastructure and executive review cadence used for CEO and board updates.", tags:["Revenue Marketing"]},
+      {text:"Built the SDR function from the ground up, combining direct hires with an automated outbound motion to stand up a dual-channel top-of-funnel engine.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
+      {text:"Own event strategy and execution end-to-end — planning, logistics, on-site execution, lead follow-up — for field and industry events including SuiteWorld.", tags:["Partner/Channel"]},
+      {text:"Manage founder and corporate social presence, building the CEO's executive thought-leadership voice alongside the corporate LinkedIn channel.", tags:["Product Marketing"]},
+      {text:"Lead productization and GTM launch of new offerings, taking products from internal concept through positioning, pricing, enablement, and launch across a three-product portfolio.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+    ]
+  },
+  {
+    company:"Plus One Robotics", role:"Head of Marketing", dates:"Dec 2023 – Sept 2025",
+    context:"Series C AI-vision & robotics company — hardware, software, and services for warehouse automation. Team of 3, budget $1.2M+.",
+    scope:["Team of 3","$1.2M+ budget"],
+    bullets:[
+      {text:"Led marketing transformation from a founder-led company to a growth-focused business employing both channel and direct routes to market.", tags:["Start-Up/Scale-Up"]},
+      {text:"Increased partner referrals by 250% after launching a channel route-to-market.", tags:["Partner/Channel"]},
+      {text:"Formalized the demand generation function, delivering $4.0M in sourced pipeline (150% to goal) via ABM, paid media, channel marketing, and SDR outreach.", tags:["Revenue Marketing"]},
+      {text:"Owned full-stack product marketing across hardware, AI-vision software, and services — positioning, messaging, and GTM strategy with ICPs for InductOne and DepalOne.", tags:["Product Marketing"]},
+      {text:"Partnered cross-functionally with Product, Sales, and Finance to establish scalable GTM frameworks, launch plans, and sales enablement resources.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+      {text:"Elevated brand and product positioning through thought leadership, analyst engagement, and 96+ earned media placements in year one.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+      {text:"Built a partner portal with enablement toolkits and managed a dozen+ hosted and sponsored events annually.", tags:["Partner/Channel"]},
+    ]
+  },
+  {
+    company:"Nday Security", role:"Strategic Advisor & Board Member (Fractional CMO)", dates:"Aug 2023 – Mar 2025",
+    context:"Pre-seed cybersecurity start-up delivering offensive security and testing services via an AI-driven SaaS platform.",
+    scope:["Pre-seed","Bootstrapped"],
+    bullets:[
+      {text:"Served as fractional CMO, leading brand development, product positioning, and full-cycle marketing execution from scratch.", tags:["Start-Up/Scale-Up","Product Marketing"]},
+      {text:"Built and launched the company's GTM strategy and marketing infrastructure — website, messaging, collateral, and product marketing assets.", tags:["Product Marketing","Cybersecurity"]},
+      {text:"Acquired 20+ customers in the first year through a channel-first model, onboarding and activating a dozen+ productive partners.", tags:["Partner/Channel","Cybersecurity"]},
+    ]
+  },
+  {
+    company:"Moogsoft (acquired by Dell)", role:"Senior Director, Head of Marketing", dates:"Nov 2022 – Aug 2023",
+    context:"VC-backed Series E AIOps platform acquired by Dell Technologies. Team of 4, budget $1.5M+.",
+    scope:["Team of 4","$1.5M+ budget","Exit to acquisition"],
+    bullets:[
+      {text:"Led GTM transformation from product-led growth (PLG) to ABM, delivering over 60% of sourced pipeline.", tags:["Start-Up/Scale-Up","Revenue Marketing"]},
+      {text:"Built integrated marketing programs leveraging commissioned research reports, aligning paid media and SDR strategy for conversion rate optimization.", tags:["Revenue Marketing"]},
+      {text:"Owned product marketing strategy — platform repositioning, messaging architecture, and field enablement through updated collateral and sales tools.", tags:["Product Marketing"]},
+      {text:"Elevated brand credibility with thought leadership content and analyst engagement (Gartner), shaping the AIOps category.", tags:["Product Marketing"]},
+    ]
+  },
+  {
+    company:"Very Good Security (VGS)", role:"Director of Demand Generation", dates:"Oct 2021 – Nov 2022",
+    context:"Venture-backed Series C fintech and data security company. Team of 8, budget $2.7M+.",
+    scope:["Team of 8","$2.7M+ budget"],
+    bullets:[
+      {text:"Delivered 80% of total pipeline through marketing-sourced programs (inbound and outbound), achieving a 60% SQL-to-opportunity conversion rate and 40% win rate.", tags:["Revenue Marketing"]},
+      {text:"Partnered with product to launch a PLG motion targeting DevOps audiences, using product usage data to optimize trial-to-paid conversion.", tags:["Revenue Marketing","Cybersecurity"]},
+      {text:"Advanced operational maturity — deployed Marketo, intent data platforms (ZoomInfo, G2), and advanced SFDC capabilities; improved lead scoring, attribution, and funnel visibility.", tags:["AI & Tech","Revenue Marketing"]},
+      {text:"Aligned closely with alliance partners like AWS to deliver high-converting marketing programs.", tags:["Partner/Channel"]},
+    ]
+  },
+  {
+    company:"Malwarebytes", role:"Director of Americas Field Marketing", dates:"May 2021 – Oct 2021",
+    context:"Cybersecurity software and services company — antivirus, anti-malware, and privacy solutions.",
+    scope:["30% of regional pipeline","$2.6M+ annual spend"],
+    bullets:[
+      {text:"Led demand generation and field marketing for B2B mid-market and enterprise segments, driving over 30% of regional pipeline.", tags:["Revenue Marketing","Cybersecurity"]},
+      {text:"Redesigned integrated marketing strategy to support PLG and sales-led trial motions; integrated product usage data into the sales process via custom dashboards.", tags:["AI & Tech","Cybersecurity"]},
+      {text:"Collaborated with product to launch interactive tools — ROI calculators, maturity assessments — accelerating demand creation and shortening sales cycles.", tags:["Cybersecurity","Revenue Marketing"]},
+    ]
+  },
+  {
+    company:"Trustwave", role:"Marketing Director, Americas and EMEA", dates:"June 2019 – April 2021",
+    context:"Global cybersecurity company — MSSP, MDR, Security Testing, Email Security & more.",
+    scope:["Team of 14","$3.5M+ budget"],
+    bullets:[
+      {text:"Led a 14-person global demand generation team across the Americas and EMEA; managed a $3.5M+ budget and full-funnel marketing execution.", tags:["Revenue Marketing","Cybersecurity"]},
+      {text:"Owned GTM strategy across enterprise, SMB, and channel segments, delivering $9M in sourced pipeline through a diversified campaign mix (ABM, digital, field, partner marketing).", tags:["Revenue Marketing","Cybersecurity"]},
+      {text:"Transformed global event strategy — RSA, Black Hat, Gartner Security & Risk Summit — shifting from sponsorships to immersive, journey-based experiences.", tags:["Revenue Marketing","Cybersecurity"]},
+      {text:"Directed partner and channel marketing, driving 5x total contract value (TCV) growth through integrated programs with Microsoft, Netskope, Palo Alto Networks, and Cybereason.", tags:["Partner/Channel"]},
+      {text:"Built global reporting infrastructure from rep-level dashboards to executive ROMI insights; responsible for board-reporting and QBRs.", tags:["AI & Tech","Revenue Marketing"]},
+      {text:"Developed and mentored a high-performing team, career-pathing 6+ high-potential hires into roles across demand gen, sales, and operations.", tags:["Start-Up/Scale-Up"]},
+    ]
+  },
+  {
+    company:"Telecom Brokerage Inc. (TBI)", role:"Senior Digital Marketing Manager", dates:"July 2014 – June 2019",
+    context:"Technology services distributor (master agent) — telecommunications, cloud, and managed services.",
+    scope:["Team of 3","Promoted to Sr. Manager"],
+    bullets:[
+      {text:"Built and led digital marketing and marketing operations capabilities, supporting the shift toward demand generation and field marketing.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
+      {text:"Grew inbound leads by 500% through content marketing, SEO, and paid campaigns; implemented HubSpot CMS and launched multiple web properties.", tags:["Revenue Marketing"]},
+      {text:"Product marketing owner for cybersecurity, SD-WAN, and UCaaS vendors.", tags:["Product Marketing","Cybersecurity"]},
+      {text:"Led design, development, and launch of a Through-Channel Marketing Automation (TCMA) platform, giving partners a tool with pre-populated, co-branded programs.", tags:["Partner/Channel","AI & Tech"]},
+      {text:"Webmaster for all TBI web properties; collaborated with product and tech teams to launch TBI's mobile app, SharePoint intranet, and Partner Portal.", tags:["AI & Tech"]},
+      {text:"Built comprehensive executive reports on marketing KPIs alongside Domo dashboards.", tags:["AI & Tech"]},
+    ]
+  },
+];
+
+const STACK = [
+  {cat:"CRM & Sales Platforms", tools:["Salesforce (SFDC)","NetSuite","HubSpot CRM","Salesloft","Outreach","LinkedIn Sales Navigator"]},
+  {cat:"Marketing Automation & Campaigns", tools:["Marketo","HubSpot","Multiview","PFL","Priority Engine","Zift"]},
+  {cat:"Analytics & Reporting", tools:["Heap Analytics","Google Analytics","Google Data Studio","Looker","Domo"]},
+  {cat:"ABM & Intent Data", tools:["Demandbase","ZoomInfo","G2 Intent","Terminus","Reachdesk","Sendoso","PFL"]},
+  {cat:"Social & Engagement", tools:["Hootsuite","Drift"]},
+  {cat:"Collaboration & CMS", tools:["SharePoint","Asana","Highspot","Webflow","WordPress"]},
+  {cat:"Generative AI", tools:["Claude / Claude Code","ChatGPT","Copilot","Canva","Notion"]},
+];
+
+const PERSONAL = [
+  {label:"Content Junkie", text:"The term \"book worm\" doesn't cut it — books, podcasts, Substacks, webinars. I love to learn, and I plan to write my own book one day."},
+  {label:"Green Thumb", text:"What started as a COVID hobby has turned into my favorite pastime. Indoor plants aren't my specialty, but my vegetable garden is thriving."},
+  {label:"Endorphin Addict", text:"I enjoy many types of movement and exercise, but my favorite continues to be lifting heavy things."},
+  {label:"Chicagoan", text:"Born and raised in the Chicago suburbs, I've lived most of my life in this great metropolitan area — the work ethic and love of seasons to prove it."},
+  {label:"Sideline Coach", text:"Or cheerleader — call it what you want. I truly love supporting my boys' development through sports."},
+  {label:"Boy Mom", text:"Two of my favorite people call me Mom, or \"Brah,\" depending on the day."},
+  {label:"Dog Lover", text:"The only other girl in the house is my sweet pup Fig. A Heinz 57, she's smart, sweet, and loves to track."},
+];
+
+let active = new Set();
+
+function renderTags(){
+  const bar = document.getElementById('tagBar');
+  bar.innerHTML = '';
+  CATEGORIES.forEach(cat=>{
+    const btn = document.createElement('button');
+    btn.className = 'tag-btn' + (active.has(cat) ? ' active' : '');
+    btn.textContent = cat;
+    btn.onclick = ()=>{ if(active.has(cat)) active.delete(cat); else active.add(cat); render(); };
+    bar.appendChild(btn);
+  });
+  const clear = document.createElement('button');
+  clear.className = 'clear-btn' + (active.size ? ' show' : '');
+  clear.textContent = 'clear all';
+  clear.onclick = ()=>{ active.clear(); render(); };
+  bar.appendChild(clear);
+}
+
+function render(){
+  renderTags();
+  const rail = document.getElementById('rail');
+  rail.innerHTML = '';
+  let anyVisible = false;
+
+  DATA.forEach(entry=>{
+    const matchingBullets = entry.bullets.filter(b => active.size === 0 || b.tags.some(t=>active.has(t)));
+    if(active.size > 0 && matchingBullets.length === 0) return;
+    anyVisible = true;
+
+    const div = document.createElement('div');
+    div.className = 'entry';
+    const allTags = [...new Set(entry.bullets.flatMap(b=>b.tags))];
+
+    div.innerHTML = `
+      <div class="dot"></div>
+      <div class="entry-head">
+        <div class="company">${entry.company}</div>
+        <div class="dates">${entry.dates}${entry.placeholder ? '<span class="placeholder-flag">fill in date</span>' : ''}</div>
+      </div>
+      <div class="title-role">${entry.role}</div>
+      ${entry.context ? `<div class="context-line">${entry.context}</div>` : ''}
+      ${entry.scope && entry.scope.length ? `<div class="scope-chips">${entry.scope.map(s=>`<span class="scope-chip">${s}</span>`).join('')}</div>` : ''}
+      <ul class="bullets">
+        ${entry.bullets.map(b=>{
+          const isDim = active.size > 0 && !b.tags.some(t=>active.has(t));
+          return `<li class="${isDim ? 'dim':''}">${b.text}</li>`;
+        }).join('')}
+      </ul>
+      <div class="entry-tags">
+        ${allTags.map(t=>`<span class="mini-tag ${active.has(t)?'match':''}">${t}</span>`).join('')}
+      </div>
+    `;
+    rail.appendChild(div);
+  });
+
+  document.getElementById('emptyState').classList.toggle('show', !anyVisible);
+}
+
+function renderStack(){
+  const grid = document.getElementById('stackGrid');
+  grid.innerHTML = STACK.map(s=>`
+    <div class="stack-cat">
+      <h4>${s.cat}</h4>
+      <div class="stack-pills">${s.tools.map(t=>`<span class="pill">${t}</span>`).join('')}</div>
+    </div>
+  `).join('');
+}
+
+function renderPersonal(){
+  const grid = document.getElementById('personal');
+  grid.innerHTML = PERSONAL.map(p=>`
+    <div class="p-card">
+      <div class="p-label">${p.label}</div>
+      <p>${p.text}</p>
+    </div>
+  `).join('');
+}
+
+document.getElementById('personalToggle').addEventListener('click', function(){
+  this.classList.toggle('open');
+  document.getElementById('personalPanel').classList.toggle('open');
+});
+
+render();
+renderStack();
+renderPersonal();
+</script>
+
+</body>
+</html>
