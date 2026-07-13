@@ -126,14 +126,9 @@
   .edu-block .yr{ font-family:var(--mono); font-size:12px; color:#8a8378; }
 
   /* personal */
-  .personal-toggle{ width:100%; text-align:left; background:var(--ink); color:var(--paper); border:none;
-    padding:20px 40px; font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.1em;
-    cursor:pointer; display:flex; justify-content:space-between; align-items:center; }
-  .personal-toggle:hover{ background:#333; }
-  .personal-toggle .plus{ font-family:var(--disp); font-size:20px; color:var(--pink); transition:transform .2s ease; }
-  .personal-toggle.open .plus{ transform:rotate(45deg); }
-  .personal-panel{ max-height:0; overflow:hidden; transition:max-height .45s ease; background:var(--paper-dim); }
-  .personal-panel.open{ max-height:2200px; }
+  .personal-header{ width:100%; text-align:left; background:var(--ink); color:var(--paper); border:none;
+    padding:20px 40px; font-family:var(--mono); font-size:13px; text-transform:uppercase; letter-spacing:.1em; }
+  .personal-panel{ background:var(--paper-dim); }
   .personal-intro{ max-width:920px; margin:0 auto; padding:40px 40px 8px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
   .headshot{ width:104px; height:104px; border-radius:50%; flex-shrink:0; background:var(--pink);
     display:flex; align-items:center; justify-content:center; overflow:hidden;
@@ -144,13 +139,14 @@
   .personal-grid{ max-width:920px; margin:0 auto; padding:28px 40px 50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
   .p-card{ background:var(--card); border:1px solid #e3dccf; border-radius:6px; padding:18px 20px; }
   .p-card .p-icon{ width:34px; height:34px; border-radius:50%; background:var(--paper-dim); border:1px solid #e3dccf;
-    display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:10px; }
+    display:flex; align-items:center; justify-content:center; margin-bottom:10px; color:var(--pink-deep); }
+  .p-card .p-icon svg{ width:18px; height:18px; }
   .p-card .p-label{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--pink-deep); margin-bottom:8px; }
   .p-card p{ font-size:14px; line-height:1.55; }
 
   footer{ padding:40px; font-family:var(--mono); font-size:12px; color:#8a8378; border-top:1px solid #ddd6ca; text-align:center; }
-  .back-to-top{ display:inline-block; color:var(--ink); text-decoration:none; font-weight:600; letter-spacing:.06em;
-    text-transform:uppercase; font-size:11px; padding-bottom:2px; border-bottom:1px solid var(--ink); margin-bottom:18px; }
+  .back-to-top{ display:inline-block; color:var(--ink); text-decoration:none; font-weight:600; letter-spacing:.05em;
+    text-transform:uppercase; font-size:15px; padding-bottom:2px; border-bottom:1px solid var(--ink); margin-bottom:18px; }
   .back-to-top:hover{ color:var(--pink-deep); border-color:var(--pink-deep); }
   .footer-contact{ display:flex; justify-content:center; flex-wrap:wrap; gap:4px 6px; }
   .footer-contact a{ color:#8a8378; text-decoration:underline; text-decoration-color:#ccc4b8; }
@@ -160,7 +156,7 @@
   @media (max-width: 640px){
     .hero{ padding:40px 20px 32px; } .filter-wrap{ padding:14px 20px; } .rail{ padding:32px 20px 40px; }
     .rail::before{ left:20px; } .entry{ padding-left:30px; } .section{ padding:44px 20px; }
-    .personal-toggle{ padding:18px 20px; } .personal-grid{ padding:20px 20px 40px; } .personal-intro{ padding:32px 20px 8px; }
+    .personal-header{ padding:18px 20px; } .personal-grid{ padding:20px 20px 40px; } .personal-intro{ padding:32px 20px 8px; }
   }
 </style>
 </head>
@@ -183,10 +179,9 @@
   </div>
 </div>
 <div class="section-nav">
-  <a href="#competencies">Competencies</a>
+  <a href="#competencies">Strengths</a>
   <a href="#timeline">Experience</a>
   <a href="#stack">Tech Stack</a>
-  <a href="#samples">Samples</a>
   <a href="#education">Education</a>
   <a href="#personalToggle">Beyond the Title</a>
 </div>
@@ -211,12 +206,6 @@
   <div class="stack-grid" id="stackGrid"></div>
 </div>
 
-<div class="section" id="samples">
-  <div class="section-title">Samples</div>
-  <div class="section-sub">Work samples and one-pagers</div>
-  <div class="samples-stub">Coming soon — PDF samples will live here.</div>
-</div>
-
 <div class="section" id="education">
   <div class="section-title">Education</div>
   <div class="edu-block">
@@ -228,10 +217,9 @@
   </div>
 </div>
 
-<button class="personal-toggle" id="personalToggle">
+<div class="personal-header" id="personalToggle">
   <span>Beyond the Title — get to know Rachel</span>
-  <span class="plus">+</span>
-</button>
+</div>
 <div class="personal-panel" id="personalPanel">
   <div class="personal-intro">
     <div class="headshot" id="headshotSlot">
@@ -297,7 +285,7 @@ const DATA = [
       {text:"Increased partner referrals by 250% after launching a channel route-to-market, transforming the acquisition strategy from a founder-led company to a growth-stage company.", tags:["Partner/Channel"]},
       {text:"Formalized the demand generation function, delivering $4.0M in sourced pipeline (150% to goal) via ABM, paid media, channel marketing, and SDR outreach.", tags:["Revenue Marketing"]},
       {text:"Owned full-stack product marketing across hardware, AI-vision software, and services — positioning, messaging, and GTM strategy with ICPs for InductOne and DepalOne.", tags:["Product Marketing"]},
-      {text:"Partnered cross-functionally with Product, Sales, and Finance to establish scalable GTM frameworks, launch plans, and sales enablement resources, accelerating time to market and partner engagement.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+      {text:"Partnered cross-functionally with Product, Sales, and Finance to establish scalable GTM frameworks, launch plans, and sales enablement resources, accelerating time to market, product adoption, and partner engagement.", tags:["Product Marketing","Start-Up/Scale-Up"]},
       {text:"Elevated brand and product positioning through thought leadership, analyst engagement, association participation, and 100+ earned media placements in year one.", tags:["Product Marketing","Start-Up/Scale-Up"]},
       {text:"Managed over a dozen field and virtual events annually; collaborated with partners to amplify presence through booth placements, after-hours events, speaking sessions, and coordinated social proof efforts.", tags:["Partner/Channel"]},
       {text:"Built a partner portal with enablement toolkits — solution briefs, training programs, and GTM playbooks — to accelerate partner ramp time.", tags:["Partner/Channel"]},
@@ -384,13 +372,13 @@ const STACK = [
 ];
 
 const PERSONAL = [
-  {icon:"📚", label:"Content Junkie", text:"The term \"book worm\" doesn't cut it — books, podcasts, Substacks, webinars. I love to learn, and I plan to write my own book one day."},
-  {icon:"🌱", label:"Green Thumb", text:"What started as a COVID hobby has turned into my favorite pastime. Indoor plants aren't my specialty, but my vegetable garden is thriving."},
-  {icon:"🏋️", label:"Endorphin Addict", text:"I enjoy many types of movement and exercise, but my favorite continues to be lifting heavy things."},
-  {icon:"🏙️", label:"Chicagoan", text:"Born and raised in the Chicago suburbs, I've lived most of my life in this great metropolitan area — the work ethic and love of seasons to prove it."},
-  {icon:"📣", label:"Sideline Coach", text:"Or cheerleader — call it what you want. I truly love supporting my boys' development through sports."},
-  {icon:"👦", label:"Boy Mom", text:"Two of my favorite people call me Mom, or \"Brah,\" depending on the day."},
-  {icon:"🐾", label:"Dog Lover", text:"The only other girl in the house is my sweet pup Fig. A Heinz 57, she's smart, sweet, and loves to track."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5c2-1 5-1 8 1 3-2 6-2 8-1v13c-2-1-5-1-8 1-3-2-6-2-8-1V5z"/><path d="M12 6v13"/></svg>', label:"Content Junkie", text:"The term \"book worm\" doesn't cut it — books, podcasts, Substacks, webinars. I love to learn, and I plan to write my own book one day."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 19C5 10 12 4 20 4c0 8-6 15-15 15z"/><path d="M5 19c2-4 5-7 9-9"/></svg>', label:"Green Thumb", text:"What started as a COVID hobby has turned into my favorite pastime. Indoor plants aren't my specialty, but my vegetable garden is thriving."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="4.5" y="7" width="3" height="10" rx="1"/><rect x="16.5" y="7" width="3" height="10" rx="1"/><path d="M2.5 10v4M21.5 10v4M7.5 12h9"/></svg>', label:"Endorphin Addict", text:"I enjoy many types of movement and exercise, but my favorite continues to be lifting heavy things."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18"/><path d="M5 20V9l4-3 4 3v11"/><path d="M13 20v-7l3-2 3 2v7"/></svg>', label:"Chicagoan", text:"Born and raised in the Chicago suburbs, I've lived most of my life in this great metropolitan area — the work ethic and love of seasons to prove it."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5v3h2l3 5.5 1-.4-1-5.1h1l9 3.5V6.5l-9 3.5H5a2 2 0 00-2 2.5z"/></svg>', label:"Sideline Coach", text:"Or cheerleader — call it what you want. I truly love supporting my boys' development through sports."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="2.4"/><path d="M4 20c0-3 2.4-5 5-5s5 2 5 5"/><circle cx="17" cy="9" r="1.8"/><path d="M14 20c0-2 1.5-3.5 3-3.5s3 1.5 3 3.5"/></svg>', label:"Boy Mom", text:"Two of my favorite people call me Mom, or \"Brah,\" depending on the day."},
+  {icon:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="9" r="1.5"/><circle cx="12" cy="6.3" r="1.5"/><circle cx="17" cy="9" r="1.5"/><path d="M12 12c-3 0-5 2.1-5 4.4S8.7 20 12 20s5-1.3 5-3.6S15 12 12 12z"/></svg>', label:"Dog Lover", text:"The only other girl in the house is my sweet pup Fig. A Heinz 57, she's smart, sweet, and loves to track."},
 ];
 
 let active = new Set();
@@ -492,11 +480,6 @@ function renderPersonal(){
     </div>
   `).join('');
 }
-
-document.getElementById('personalToggle').addEventListener('click', function(){
-  this.classList.toggle('open');
-  document.getElementById('personalPanel').classList.toggle('open');
-});
 
 render();
 renderCompetencies();
