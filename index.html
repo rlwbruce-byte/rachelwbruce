@@ -26,28 +26,35 @@
   body{ background:var(--paper); color:var(--ink); font-family:var(--body); -webkit-font-smoothing:antialiased; }
 
   .hero{ background:var(--ink); color:var(--paper); padding:64px 40px 48px; position:relative; overflow:hidden; }
-  .hero::after{ content:""; position:absolute; inset:0;
-    background: linear-gradient(180deg, transparent 60%, var(--pink) 60%, var(--pink) 61%, transparent 61%);
-    opacity:.5; pointer-events:none; }
   .kicker{ font-family:var(--mono); font-size:12px; letter-spacing:.18em; text-transform:uppercase; color:var(--pink); margin-bottom:18px; }
   h1.name{ font-family:var(--disp); font-size:clamp(48px, 9vw, 108px); line-height:.88; letter-spacing:-.01em; text-transform:uppercase; }
   h1.name span{ color:var(--pink); }
   .role-line{ font-family:var(--mono); font-size:15px; margin-top:16px; max-width:600px; color:#d8d3ca; line-height:1.6; }
-  .contact-line{ font-family:var(--mono); font-size:12px; margin-top:10px; color:#8f887c; }
-  .contact-line a{ color:#8f887c; }
-  .bio{ font-size:15.5px; line-height:1.65; max-width:640px; margin-top:22px; color:#eae6df; }
+  .contact-line{ font-family:var(--mono); font-size:12.5px; margin-top:10px; color:#c9c2b4; letter-spacing:.02em; }
+  .contact-line a{ color:#f0ece2; text-decoration:none; border-bottom:1px solid #6b6459; transition:border-color .15s ease, color .15s ease; }
+  .contact-line a:hover{ color:var(--pink); border-color:var(--pink); }
+  .contact-sep{ color:#6b6459; margin:0 2px; }
+  .bio{ font-size:15.5px; line-height:1.65; max-width:920px; margin-top:22px; color:#eae6df; }
   .bio strong{ color:var(--pink); font-weight:600; }
-  .stat-row{ display:flex; gap:0; margin-top:44px; flex-wrap:wrap; border-top:1px solid #4a4a4a; }
-  .stat{ flex:1; min-width:150px; padding:18px 20px 4px 0; border-right:1px solid #4a4a4a; }
+  .hero-cta{ margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; }
+  .btn-download{ display:inline-flex; align-items:center; gap:8px; font-family:var(--mono); font-size:12.5px;
+    text-transform:uppercase; letter-spacing:.06em; color:var(--ink); background:var(--pink); text-decoration:none;
+    padding:11px 20px; border-radius:2px; border:1.5px solid var(--pink); transition:all .15s ease; font-weight:600; }
+  .btn-download:hover{ background:transparent; color:var(--pink); }
+  .stat-row{ display:flex; gap:0; margin-top:44px; flex-wrap:wrap; border-top:2px solid var(--pink); }
+  .stat{ flex:1; min-width:150px; padding:18px 24px 4px 20px; border-right:1px solid #4a4a4a; }
+  .stat:first-child{ padding-left:0; }
   .stat:last-child{border-right:none;}
   .stat .num{ font-family:var(--disp); font-size:32px; color:var(--pink); }
   .stat .label{ font-family:var(--mono); font-size:11px; color:#a8a29a; text-transform:uppercase; letter-spacing:.06em; }
 
   /* nav */
-  .section-nav{ display:flex; gap:0; background:var(--ink); border-top:1px solid #4a4a4a; overflow-x:auto; }
-  .section-nav a{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em;
-    color:#a8a29a; text-decoration:none; padding:14px 20px; white-space:nowrap; border-right:1px solid #4a4a4a; }
-  .section-nav a:hover{ color:var(--pink); }
+  .section-nav{ display:flex; gap:10px; background:var(--paper-dim); border-top:2px solid var(--ink); border-bottom:2px solid var(--ink);
+    overflow-x:auto; padding:14px 40px; }
+  .section-nav a{ font-family:var(--mono); font-size:11.5px; text-transform:uppercase; letter-spacing:.06em;
+    color:var(--ink); text-decoration:none; padding:9px 16px; white-space:nowrap;
+    border:1.5px solid var(--ink); border-radius:2px; background:var(--card); transition:all .15s ease; flex-shrink:0; }
+  .section-nav a:hover{ background:var(--pink); color:#fff; border-color:var(--pink); }
 
   .filter-wrap{ position:sticky; top:0; z-index:20; background:var(--paper); border-bottom:2px solid var(--ink); padding:18px 40px; }
   .filter-label{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.12em; color:#8a8378; margin-bottom:10px; }
@@ -75,6 +82,7 @@
   .context-line{ font-size:13px; color:#6b6459; margin-bottom:14px; font-style:italic; }
   .scope-chips{ display:flex; gap:8px; flex-wrap:wrap; margin-bottom:14px; }
   .scope-chip{ font-family:var(--mono); font-size:10.5px; background:var(--ink); color:var(--paper); padding:3px 9px; border-radius:2px; }
+  .entry-note{ font-family:var(--mono); font-size:10.5px; color:#a39c8f; font-style:italic; margin-bottom:14px; }
   .bullets{ list-style:none; }
   .bullets li{ font-size:14.5px; line-height:1.55; margin-bottom:8px; padding-left:16px; position:relative; transition:opacity .2s ease; }
   .bullets li::before{ content:"—"; position:absolute; left:0; color:var(--pink); }
@@ -83,6 +91,19 @@
   .mini-tag{ font-family:var(--mono); font-size:10px; text-transform:uppercase; padding:3px 8px; border:1px solid #ccc4b8;
     border-radius:2px; color:#8a8378; }
   .mini-tag.match{ border-color:var(--pink); color:var(--pink-deep); background:#fdeaf2; }
+
+  /* competencies */
+  .comp-grid{ display:grid; grid-template-columns:repeat(auto-fit, minmax(260px,1fr)); gap:18px; }
+  .comp-card{ background:var(--card); border:1px solid #e3dccf; border-radius:6px; padding:22px 22px 20px; display:flex; flex-direction:column; }
+  .comp-card h4{ font-family:var(--disp); font-size:19px; text-transform:uppercase; letter-spacing:.01em; margin-bottom:8px; }
+  .comp-card p{ font-size:13.5px; line-height:1.55; color:#4a4438; flex-grow:1; }
+  .comp-link{ margin-top:14px; font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.05em;
+    color:var(--pink-deep); text-decoration:none; border-bottom:1px solid var(--pink-deep); align-self:flex-start;
+    background:none; border-top:none; border-left:none; border-right:none; padding:0 0 2px; cursor:pointer; }
+  .comp-link:hover{ color:var(--ink); border-color:var(--ink); }
+
+  /* samples stub */
+  .samples-stub{ border:1.5px dashed #ccc4b8; border-radius:6px; padding:32px; text-align:center; color:#8a8378; font-family:var(--mono); font-size:13px; }
 
   .empty-state{ font-family:var(--mono); text-align:center; padding:60px 20px; color:#8a8378; display:none; }
   .empty-state.show{ display:block; }
@@ -111,29 +132,49 @@
   .personal-toggle:hover{ background:#333; }
   .personal-toggle .plus{ font-family:var(--disp); font-size:20px; color:var(--pink); transition:transform .2s ease; }
   .personal-toggle.open .plus{ transform:rotate(45deg); }
-  .personal-panel{ max-height:0; overflow:hidden; transition:max-height .35s ease; background:var(--paper-dim); }
-  .personal-panel.open{ max-height:1600px; }
-  .personal-grid{ max-width:920px; margin:0 auto; padding:40px 40px 50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:28px; }
+  .personal-panel{ max-height:0; overflow:hidden; transition:max-height .45s ease; background:var(--paper-dim); }
+  .personal-panel.open{ max-height:2200px; }
+  .personal-intro{ max-width:920px; margin:0 auto; padding:40px 40px 8px; display:flex; align-items:center; gap:24px; flex-wrap:wrap; }
+  .headshot{ width:104px; height:104px; border-radius:50%; flex-shrink:0; background:var(--pink);
+    display:flex; align-items:center; justify-content:center; overflow:hidden;
+    border:3px solid var(--ink); font-family:var(--disp); font-size:34px; color:#fff; }
+  .headshot img{ width:100%; height:100%; object-fit:cover; object-position:center 15%; display:block; }
+  .personal-intro-text{ font-size:14px; line-height:1.55; color:#4a4438; max-width:560px; }
+  .personal-intro-text strong{ display:block; font-family:var(--disp); font-size:20px; text-transform:uppercase; color:var(--ink); margin-bottom:4px; letter-spacing:.01em; }
+  .personal-grid{ max-width:920px; margin:0 auto; padding:28px 40px 50px; display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:20px; }
+  .p-card{ background:var(--card); border:1px solid #e3dccf; border-radius:6px; padding:18px 20px; }
+  .p-card .p-icon{ width:34px; height:34px; border-radius:50%; background:var(--paper-dim); border:1px solid #e3dccf;
+    display:flex; align-items:center; justify-content:center; font-size:16px; margin-bottom:10px; }
   .p-card .p-label{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:.08em; color:var(--pink-deep); margin-bottom:8px; }
   .p-card p{ font-size:14px; line-height:1.55; }
 
-  footer{ text-align:center; padding:40px; font-family:var(--mono); font-size:12px; color:#8a8378; border-top:1px solid #ddd6ca; }
+  footer{ padding:40px; font-family:var(--mono); font-size:12px; color:#8a8378; border-top:1px solid #ddd6ca; text-align:center; }
+  .back-to-top{ display:inline-block; color:var(--ink); text-decoration:none; font-weight:600; letter-spacing:.06em;
+    text-transform:uppercase; font-size:11px; padding-bottom:2px; border-bottom:1px solid var(--ink); margin-bottom:18px; }
+  .back-to-top:hover{ color:var(--pink-deep); border-color:var(--pink-deep); }
+  .footer-contact{ display:flex; justify-content:center; flex-wrap:wrap; gap:4px 6px; }
+  .footer-contact a{ color:#8a8378; text-decoration:underline; text-decoration-color:#ccc4b8; }
+  .footer-contact a:hover{ color:var(--pink-deep); text-decoration-color:var(--pink-deep); }
+  .footer-tagline{ margin-top:14px; color:#a39c8f; }
 
   @media (max-width: 640px){
     .hero{ padding:40px 20px 32px; } .filter-wrap{ padding:14px 20px; } .rail{ padding:32px 20px 40px; }
     .rail::before{ left:20px; } .entry{ padding-left:30px; } .section{ padding:44px 20px; }
-    .personal-toggle{ padding:18px 20px; } .personal-grid{ padding:32px 20px 40px; }
+    .personal-toggle{ padding:18px 20px; } .personal-grid{ padding:20px 20px 40px; } .personal-intro{ padding:32px 20px 8px; }
   }
 </style>
 </head>
 <body>
 
-<div class="hero">
+<div class="hero" id="top">
   <div class="kicker">Career Impact Report — Filterable Edition</div>
   <h1 class="name">Rachel <span>Bruce</span></h1>
-  <div class="role-line">VP of Marketing, Continuous · Where revenue growth is amplified by cross-functional alignment, data, and operational precision.</div>
-  <div class="contact-line">Buffalo Grove, IL · rlwbruce@gmail.com · 847-609-5800 · linkedin.com/in/rachelwbruce</div>
-  <p class="bio">Data-driven marketing leader with 15+ years building and scaling high-impact marketing functions across cybersecurity, AI/robotics, and technology distribution — known for aligning GTM strategy to business objectives and turning pipeline, revenue, and brand authority into repeatable systems. <strong>Systems and tools have always been core to how I work</strong> — deep fluency across CRM, marketing automation, and analytics stacks — so extending that into hands-on AI adoption, from custom agent systems to automated GTM workflows, has been a natural evolution rather than a pivot.</p>
+  <div class="role-line">VP of Marketing · Where revenue growth is amplified by cross-functional alignment, data, and operational precision.</div>
+  <div class="contact-line">Buffalo Grove, IL <span class="contact-sep">·</span> <a href="mailto:rlwbruce@gmail.com">rlwbruce@gmail.com</a> <span class="contact-sep">·</span> <a href="tel:+18476095800">847-609-5800</a> <span class="contact-sep">·</span> <a href="https://www.linkedin.com/in/rachelwbruce/" target="_blank" rel="noopener">linkedin.com/in/rachelwbruce</a></div>
+  <p class="bio">Growth marketing leader who sets the strategy, runs the plays, and optimizes the engine when it's broken. <strong>More than 15 years of experience across cybersecurity, AI, robotics, and technology distribution — now AI-native.</strong> Known for aligning marketing strategy with go-to-market and business objectives to drive measurable growth in pipeline and brand. Demonstrated success transitioning to growth stage (Continuous), scaling through acquisition (Moogsoft), and transforming global marketing organizations (Trustwave). Builds and leads high-performing teams — up to 14, with budgets to $3.5M — and designs the proprietary AI systems that multiply the output of lean ones.</p>
+  <div class="hero-cta">
+    <a class="btn-download" href="Rachel-Bruce-Resume.pdf" download>↓ Download Resume (PDF)</a>
+  </div>
   <div class="stat-row">
     <div class="stat"><div class="num">15+</div><div class="label">Years B2B Marketing</div></div>
     <div class="stat"><div class="num">6x</div><div class="label">Teams Built & Led</div></div>
@@ -142,10 +183,18 @@
   </div>
 </div>
 <div class="section-nav">
+  <a href="#competencies">Competencies</a>
   <a href="#timeline">Experience</a>
   <a href="#stack">Tech Stack</a>
+  <a href="#samples">Samples</a>
   <a href="#education">Education</a>
-  <a href="#personal">Beyond the Title</a>
+  <a href="#personalToggle">Beyond the Title</a>
+</div>
+
+<div class="section" id="competencies">
+  <div class="section-title">Core Competencies</div>
+  <div class="section-sub">Also known as: what I'm best at — click through to see each one in the work</div>
+  <div class="comp-grid" id="compGrid"></div>
 </div>
 
 <div class="filter-wrap" id="timeline">
@@ -160,6 +209,12 @@
   <div class="section-title">Tech Stack</div>
   <div class="section-sub">Tools & platforms across the funnel</div>
   <div class="stack-grid" id="stackGrid"></div>
+</div>
+
+<div class="section" id="samples">
+  <div class="section-title">Samples</div>
+  <div class="section-sub">Work samples and one-pagers</div>
+  <div class="samples-stub">Coming soon — PDF samples will live here.</div>
 </div>
 
 <div class="section" id="education">
@@ -178,50 +233,81 @@
   <span class="plus">+</span>
 </button>
 <div class="personal-panel" id="personalPanel">
+  <div class="personal-intro">
+    <div class="headshot" id="headshotSlot">
+      <!-- Swap this div for: <img src="rachel-headshot.jpg" alt="Rachel Bruce"> when ready to publish the photo -->
+      RB
+    </div>
+    <div class="personal-intro-text">
+      <strong>Get to know Rachel</strong>
+      A little more about who I am outside of pipeline and reporting dashboards.
+    </div>
+  </div>
   <div class="personal-grid" id="personal"></div>
 </div>
 
-<footer>linkedin.com/in/RachelWBruce — click any tag above to see how the story reshapes itself</footer>
+<footer>
+  <a href="#top" class="back-to-top">↑ Back to top</a>
+  <div class="footer-contact">
+    <span>Buffalo Grove, IL</span><span class="contact-sep">·</span>
+    <a href="mailto:rlwbruce@gmail.com">rlwbruce@gmail.com</a><span class="contact-sep">·</span>
+    <a href="tel:+18476095800">847-609-5800</a><span class="contact-sep">·</span>
+    <a href="https://www.linkedin.com/in/rachelwbruce/" target="_blank" rel="noopener">linkedin.com/in/rachelwbruce</a>
+  </div>
+  <div class="footer-tagline">Click any tag above to see how the story reshapes itself</div>
+</footer>
 
 <script>
+const COMPETENCIES = [
+  {title:"GTM Strategy & Execution", text:"Own GTM and full-funnel strategy — aligning programs to pipeline goals and optimizing through data to run the most profitable integrated campaigns.", link:["Start-Up/Scale-Up","Revenue Marketing"]},
+  {title:"Revenue Generation", text:"Built and executed high-impact marketing programs across ABM, PLG, channel, paid media, and field — driving pipeline, funnel velocity, and business goals.", link:["Revenue Marketing"]},
+  {title:"Segmentation", text:"Define market segmentation, ICPs, and personas. Establish product-market fit by industry, use case, and role.", link:["Product Marketing"]},
+  {title:"Positioning & Messaging", text:"Develop differentiated messaging and positioning statements focused on solution selling.", link:["Product Marketing"]},
+  {title:"Leadership", text:"Manage, develop, and career-path team members — clear roles, KPIs, and an environment built for high achievement.", link:["Start-Up/Scale-Up"]},
+  {title:"Cross-Functional Collaboration", text:"Foster alignment between marketing and sales, CS, product, RevOps, and finance to ensure seamless execution.", link:["Product Marketing","Start-Up/Scale-Up"]},
+  {title:"Sales Enablement", text:"Create digestible training materials and resources that enhance sales effectiveness and drive revenue.", link:["Product Marketing"]},
+  {title:"Performance Analysis", text:"Track full-funnel KPIs and build board-ready and executive reporting dashboards to support pipeline visibility.", link:["AI & Tech"]},
+];
+
 const CATEGORIES = ["Revenue Marketing","Product Marketing","Partner/Channel","Start-Up/Scale-Up","Cybersecurity","AI & Tech"];
 
 const DATA = [
   {
     company:"Continuous", role:"VP of Marketing", dates:"Sept 2025 – Present",
-    context:"B2B SaaS building embedded revenue infrastructure connecting Salesforce and NetSuite, automating quote-to-cash for complex usage-based and hybrid pricing models.",
-    scope:[],
+    context:"SaaS startup building embedded revenue infrastructure for companies with complex quote-to-revenue models (Salesforce ISV Partner, NetSuite SDN Partner).",
+    scope:["Team of 3 + agencies","$1.0M budget"],
     bullets:[
-      {text:"Built the marketing function from the ground up — brand, messaging, product marketing, demand generation, and content across a three-product portfolio.", tags:["Start-Up/Scale-Up","Product Marketing"]},
-      {text:"Designed and shipped a proprietary AI-agent GTM operating system — nine custom agents (prospect research, competitor intelligence, case studies, ad copy, outreach, content, campaign planning, LinkedIn, performance reporting) on a versioned company knowledge base, packaged as an internal Claude Code plugin for team-wide distribution.", tags:["AI & Tech"]},
+      {text:"Transformed the marketing function from the ground up — rebranding and owning messaging, demand generation, and content.", tags:["Start-Up/Scale-Up","Product Marketing"]},
+      {text:"Designed and shipped a proprietary AI-agent GTM operating system — nine custom agents for workflow efficiency (prospect research, competitor intelligence, ad copy, outreach, content, campaign planning, LinkedIn, performance reporting) on a versioned company knowledge base, packaged as an internal Claude Code plugin — automating work equivalent to 3 marketers.", tags:["AI & Tech"]},
+      {text:"Productized a three-product portfolio and built the surrounding launch and GTM programs, from positioning through enablement.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+      {text:"Built the demand generation and SDR functions from the ground up — pairing direct hires with automated outbound, paid search, paid social, webinars, and events — scaling the database 250% and generating the company's first direct inbound leads.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
+      {text:"Launched the company's video content strategy complete with a promotion engine — going from 0 to 23 videos, finally letting prospects visualize the solution.", tags:["Revenue Marketing"]},
+      {text:"Managed founder and corporate social presence, building the CEO's executive thought-leadership voice and corporate channel — growing LinkedIn following 830% and AI/LLM brand visibility 94%.", tags:["Product Marketing","AI & Tech"]},
       {text:"Automated competitor intelligence across 9 direct competitors with a daily monitoring pipeline, publishing shareable reports the sales team accesses without needing repo access.", tags:["AI & Tech"]},
-      {text:"Built a full-funnel video content engine — 16+ product video kits (titles, descriptions, thumbnails, cross-channel repurposing) across three dedicated YouTube channels.", tags:["Revenue Marketing"]},
-      {text:"Led the company's brand narrative overhaul, translating technical positioning into a buyer-language story adopted across sales, web, and campaign materials.", tags:["Product Marketing"]},
       {text:"Manage the paid media program (Google Search & LinkedIn, agency-run) and built the reporting infrastructure and executive review cadence used for CEO and board updates.", tags:["Revenue Marketing"]},
-      {text:"Built the SDR function from the ground up, combining direct hires with an automated outbound motion to stand up a dual-channel top-of-funnel engine.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
       {text:"Own event strategy and execution end-to-end — planning, logistics, on-site execution, lead follow-up — for field and industry events including SuiteWorld.", tags:["Partner/Channel"]},
-      {text:"Manage founder and corporate social presence, building the CEO's executive thought-leadership voice alongside the corporate LinkedIn channel.", tags:["Product Marketing"]},
-      {text:"Lead productization and GTM launch of new offerings, taking products from internal concept through positioning, pricing, enablement, and launch across a three-product portfolio.", tags:["Product Marketing","Start-Up/Scale-Up"]},
     ]
   },
   {
     company:"Plus One Robotics", role:"Head of Marketing", dates:"Dec 2023 – Sept 2025",
-    context:"Series C AI-vision & robotics company — hardware, software, and services for warehouse automation. Team of 3, budget $1.2M+.",
-    scope:["Team of 3","$1.2M+ budget"],
+    context:"Series C AI-vision & robotics company — hardware, software, and services for warehouse automation.",
+    scope:["Team of 3 + 3–5 agencies","$1.2M budget"],
     bullets:[
-      {text:"Led marketing transformation from a founder-led company to a growth-focused business employing both channel and direct routes to market.", tags:["Start-Up/Scale-Up"]},
-      {text:"Increased partner referrals by 250% after launching a channel route-to-market.", tags:["Partner/Channel"]},
+      {text:"Led end-to-end marketing, revenue operations, sales enablement, and sales development functions with a team of three.", tags:["Start-Up/Scale-Up"]},
+      {text:"Increased partner referrals by 250% after launching a channel route-to-market, transforming the acquisition strategy from a founder-led company to a growth-stage company.", tags:["Partner/Channel"]},
       {text:"Formalized the demand generation function, delivering $4.0M in sourced pipeline (150% to goal) via ABM, paid media, channel marketing, and SDR outreach.", tags:["Revenue Marketing"]},
       {text:"Owned full-stack product marketing across hardware, AI-vision software, and services — positioning, messaging, and GTM strategy with ICPs for InductOne and DepalOne.", tags:["Product Marketing"]},
-      {text:"Partnered cross-functionally with Product, Sales, and Finance to establish scalable GTM frameworks, launch plans, and sales enablement resources.", tags:["Product Marketing","Start-Up/Scale-Up"]},
-      {text:"Elevated brand and product positioning through thought leadership, analyst engagement, and 96+ earned media placements in year one.", tags:["Product Marketing","Start-Up/Scale-Up"]},
-      {text:"Built a partner portal with enablement toolkits and managed a dozen+ hosted and sponsored events annually.", tags:["Partner/Channel"]},
+      {text:"Partnered cross-functionally with Product, Sales, and Finance to establish scalable GTM frameworks, launch plans, and sales enablement resources, accelerating time to market and partner engagement.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+      {text:"Elevated brand and product positioning through thought leadership, analyst engagement, association participation, and 100+ earned media placements in year one.", tags:["Product Marketing","Start-Up/Scale-Up"]},
+      {text:"Managed over a dozen field and virtual events annually; collaborated with partners to amplify presence through booth placements, after-hours events, speaking sessions, and coordinated social proof efforts.", tags:["Partner/Channel"]},
+      {text:"Built a partner portal with enablement toolkits — solution briefs, training programs, and GTM playbooks — to accelerate partner ramp time.", tags:["Partner/Channel"]},
     ]
   },
   {
     company:"Nday Security", role:"Strategic Advisor & Board Member (Fractional CMO)", dates:"Aug 2023 – Mar 2025",
     context:"Pre-seed cybersecurity start-up delivering offensive security and testing services via an AI-driven SaaS platform.",
     scope:["Pre-seed","Bootstrapped"],
+    note:"Advisory · not on current resume",
     bullets:[
       {text:"Served as fractional CMO, leading brand development, product positioning, and full-cycle marketing execution from scratch.", tags:["Start-Up/Scale-Up","Product Marketing"]},
       {text:"Built and launched the company's GTM strategy and marketing infrastructure — website, messaging, collateral, and product marketing assets.", tags:["Product Marketing","Cybersecurity"]},
@@ -253,10 +339,10 @@ const DATA = [
   {
     company:"Malwarebytes", role:"Director of Americas Field Marketing", dates:"May 2021 – Oct 2021",
     context:"Cybersecurity software and services company — antivirus, anti-malware, and privacy solutions.",
-    scope:["30% of regional pipeline","$2.6M+ annual spend"],
+    scope:["Team of 2","$2.6M annual budget"],
     bullets:[
       {text:"Led demand generation and field marketing for B2B mid-market and enterprise segments, driving over 30% of regional pipeline.", tags:["Revenue Marketing","Cybersecurity"]},
-      {text:"Redesigned integrated marketing strategy to support PLG and sales-led trial motions; integrated product usage data into the sales process via custom dashboards.", tags:["AI & Tech","Cybersecurity"]},
+      {text:"Redesigned integrated marketing strategy to support PLG and sales-led trial motions; partnered with engineering and data teams to integrate product usage data into the sales process via custom Looker dashboards.", tags:["AI & Tech","Cybersecurity"]},
       {text:"Collaborated with product to launch interactive tools — ROI calculators, maturity assessments — accelerating demand creation and shortening sales cycles.", tags:["Cybersecurity","Revenue Marketing"]},
     ]
   },
@@ -278,34 +364,33 @@ const DATA = [
     context:"Technology services distributor (master agent) — telecommunications, cloud, and managed services.",
     scope:["Team of 3","Promoted to Sr. Manager"],
     bullets:[
-      {text:"Built and led digital marketing and marketing operations capabilities, supporting the shift toward demand generation and field marketing.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
-      {text:"Grew inbound leads by 500% through content marketing, SEO, and paid campaigns; implemented HubSpot CMS and launched multiple web properties.", tags:["Revenue Marketing"]},
-      {text:"Product marketing owner for cybersecurity, SD-WAN, and UCaaS vendors.", tags:["Product Marketing","Cybersecurity"]},
-      {text:"Led design, development, and launch of a Through-Channel Marketing Automation (TCMA) platform, giving partners a tool with pre-populated, co-branded programs.", tags:["Partner/Channel","AI & Tech"]},
-      {text:"Webmaster for all TBI web properties; collaborated with product and tech teams to launch TBI's mobile app, SharePoint intranet, and Partner Portal.", tags:["AI & Tech"]},
-      {text:"Built comprehensive executive reports on marketing KPIs alongside Domo dashboards.", tags:["AI & Tech"]},
+      {text:"Promoted to Senior Manager, leading a team of three and serving on the cross-functional Operational Efficiency Task Force; built the digital marketing and marketing operations functions from the ground up.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
+      {text:"Led a cross-functional team across product, tech, and partner stakeholders to launch a Through-Channel Marketing Automation (TCMA) platform, giving channel partners turnkey, co-branded demand programs at scale.", tags:["Partner/Channel","AI & Tech"]},
+      {text:"Grew inbound leads by 500% through content, SEO, and paid programs; implemented HubSpot CMS and launched multiple web properties to support a new demand generation motion.", tags:["Revenue Marketing"]},
+      {text:"Owned product marketing for cybersecurity, SD-WAN, and UCaaS vendors, partnering with vendor and channel teams to bring joint go-to-market programs to market.", tags:["Product Marketing","Cybersecurity"]},
+      {text:"Partnered with product, engineering, and data teams to deliver internal platforms (mobile app, partner portal, intranet) and build real-time analytics dashboards in Domo, giving leadership live visibility into marketing KPIs and pipeline.", tags:["AI & Tech"]},
     ]
   },
 ];
 
 const STACK = [
   {cat:"CRM & Sales Platforms", tools:["Salesforce (SFDC)","NetSuite","HubSpot CRM","Salesloft","Outreach","LinkedIn Sales Navigator"]},
-  {cat:"Marketing Automation & Campaigns", tools:["Marketo","HubSpot","Multiview","PFL","Priority Engine","Zift"]},
+  {cat:"Marketing Automation & Campaigns", tools:["Marketo","HubSpot","Multiview","Priority Engine","Zift"]},
   {cat:"Analytics & Reporting", tools:["Heap Analytics","Google Analytics","Google Data Studio","Looker","Domo"]},
   {cat:"ABM & Intent Data", tools:["Demandbase","ZoomInfo","G2 Intent","Terminus","Reachdesk","Sendoso","PFL"]},
   {cat:"Social & Engagement", tools:["Hootsuite","Drift"]},
   {cat:"Collaboration & CMS", tools:["SharePoint","Asana","Highspot","Webflow","WordPress"]},
-  {cat:"Generative AI", tools:["Claude / Claude Code","ChatGPT","Copilot","Canva","Notion"]},
+  {cat:"Generative AI", tools:["Claude","ChatGPT","Copilot","Gemini","Canva","Notion"]},
 ];
 
 const PERSONAL = [
-  {label:"Content Junkie", text:"The term \"book worm\" doesn't cut it — books, podcasts, Substacks, webinars. I love to learn, and I plan to write my own book one day."},
-  {label:"Green Thumb", text:"What started as a COVID hobby has turned into my favorite pastime. Indoor plants aren't my specialty, but my vegetable garden is thriving."},
-  {label:"Endorphin Addict", text:"I enjoy many types of movement and exercise, but my favorite continues to be lifting heavy things."},
-  {label:"Chicagoan", text:"Born and raised in the Chicago suburbs, I've lived most of my life in this great metropolitan area — the work ethic and love of seasons to prove it."},
-  {label:"Sideline Coach", text:"Or cheerleader — call it what you want. I truly love supporting my boys' development through sports."},
-  {label:"Boy Mom", text:"Two of my favorite people call me Mom, or \"Brah,\" depending on the day."},
-  {label:"Dog Lover", text:"The only other girl in the house is my sweet pup Fig. A Heinz 57, she's smart, sweet, and loves to track."},
+  {icon:"📚", label:"Content Junkie", text:"The term \"book worm\" doesn't cut it — books, podcasts, Substacks, webinars. I love to learn, and I plan to write my own book one day."},
+  {icon:"🌱", label:"Green Thumb", text:"What started as a COVID hobby has turned into my favorite pastime. Indoor plants aren't my specialty, but my vegetable garden is thriving."},
+  {icon:"🏋️", label:"Endorphin Addict", text:"I enjoy many types of movement and exercise, but my favorite continues to be lifting heavy things."},
+  {icon:"🏙️", label:"Chicagoan", text:"Born and raised in the Chicago suburbs, I've lived most of my life in this great metropolitan area — the work ethic and love of seasons to prove it."},
+  {icon:"📣", label:"Sideline Coach", text:"Or cheerleader — call it what you want. I truly love supporting my boys' development through sports."},
+  {icon:"👦", label:"Boy Mom", text:"Two of my favorite people call me Mom, or \"Brah,\" depending on the day."},
+  {icon:"🐾", label:"Dog Lover", text:"The only other girl in the house is my sweet pup Fig. A Heinz 57, she's smart, sweet, and loves to track."},
 ];
 
 let active = new Set();
@@ -351,6 +436,7 @@ function render(){
       <div class="title-role">${entry.role}</div>
       ${entry.context ? `<div class="context-line">${entry.context}</div>` : ''}
       ${entry.scope && entry.scope.length ? `<div class="scope-chips">${entry.scope.map(s=>`<span class="scope-chip">${s}</span>`).join('')}</div>` : ''}
+      ${entry.note ? `<div class="entry-note">${entry.note}</div>` : ''}
       <ul class="bullets">
         ${entry.bullets.map(b=>{
           const isDim = active.size > 0 && !b.tags.some(t=>active.has(t));
@@ -377,10 +463,30 @@ function renderStack(){
   `).join('');
 }
 
+function renderCompetencies(){
+  const grid = document.getElementById('compGrid');
+  grid.innerHTML = COMPETENCIES.map((c,i)=>`
+    <div class="comp-card">
+      <h4>${c.title}</h4>
+      <p>${c.text}</p>
+      <button class="comp-link" data-idx="${i}">See it in the work →</button>
+    </div>
+  `).join('');
+  grid.querySelectorAll('.comp-link').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const comp = COMPETENCIES[+btn.dataset.idx];
+      active = new Set(comp.link);
+      render();
+      document.getElementById('timeline').scrollIntoView({behavior:'smooth', block:'start'});
+    });
+  });
+}
+
 function renderPersonal(){
   const grid = document.getElementById('personal');
   grid.innerHTML = PERSONAL.map(p=>`
     <div class="p-card">
+      <div class="p-icon">${p.icon}</div>
       <div class="p-label">${p.label}</div>
       <p>${p.text}</p>
     </div>
@@ -393,6 +499,7 @@ document.getElementById('personalToggle').addEventListener('click', function(){
 });
 
 render();
+renderCompetencies();
 renderStack();
 renderPersonal();
 </script>
