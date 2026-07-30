@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fiddler AI — CISO Persona Summary</title>
+<style>
+  :root{
+    --primary: #106ed7;
+    --secondary: #13161b;
+    --accent: #d96b49;
+    --ink:#13161b; --paper:#f8f6f3; --card:#ffffff; --muted:#7c7f88; --line:#e2ddd4;
+    --font-body: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
+    --font-disp: "Inter Tight", "Inter", -apple-system, sans-serif;
+    --font-mono: "SFMono-Regular", ui-monospace, Menlo, Consolas, monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-body); line-height:1.55;}
+  header.cover{background:var(--secondary); color:#fff; padding:56px 40px; position:relative; overflow:hidden;}
+  header.cover::after{content:"";position:absolute;inset:0;background:
+    radial-gradient(60% 90% at 88% -10%,rgba(16,110,215,.35),transparent 60%),
+    radial-gradient(40% 60% at 8% 120%,rgba(217,107,73,.18),transparent 60%);pointer-events:none}
+  header.cover .inner{position:relative; z-index:1;}
+  header.cover .eyebrow{font-family:var(--font-mono); font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:#9aa3b0;}
+  header.cover h1{font-family:var(--font-disp); margin:10px 0 8px; font-size:clamp(28px,5vw,44px); font-weight:800; letter-spacing:-.02em;}
+  header.cover .meta{font-family:var(--font-mono); font-size:13px; color:#aeb4be;}
+  header.cover .caveat{margin-top:18px; max-width:70ch; font-size:13.5px; color:#c8cdd6; border-left:2px solid var(--accent); padding-left:12px;}
+  .persona{max-width:880px; margin:0 auto; padding:40px 40px 56px;}
+  .card{background:var(--card); border:1px solid var(--line); border-radius:10px; padding:22px 24px; margin-bottom:18px; box-shadow:0 1px 2px rgba(19,22,27,.05),0 8px 24px rgba(19,22,27,.05);}
+  .card h3{margin-top:0; font-family:var(--font-disp); font-size:14px; text-transform:uppercase; letter-spacing:.05em; color:var(--primary); font-weight:700;}
+  .card h4{font-family:var(--font-disp); font-size:15px; margin:14px 0 4px; font-weight:700;}
+  .rolebar{font-family:var(--font-mono); font-size:12.5px; color:var(--muted); margin:6px 0 22px;}
+  .pillar{border-left:3px solid var(--accent); padding-left:14px; margin-bottom:16px;}
+  .pillar strong{font-family:var(--font-disp);}
+  .proof-confirmed{border-left:3px solid var(--primary); padding-left:12px; margin-bottom:10px; font-size:14.5px;}
+  .proof-directional{border-left:3px dashed var(--muted); padding-left:12px; margin-bottom:10px; font-size:14.5px; opacity:.8;}
+  .tag{font-family:var(--font-mono); font-size:10px; text-transform:uppercase; background:#fdeee0; color:#a05a1c; padding:2px 6px; border-radius:3px; margin-left:6px;}
+  table{width:100%; border-collapse:collapse; font-size:14px;}
+  th,td{text-align:left; padding:10px 8px; border-bottom:1px solid var(--line); vertical-align:top;}
+  th{font-family:var(--font-mono); font-size:11px; text-transform:uppercase; color:var(--muted);}
+  ul.headline li{margin-bottom:8px; font-weight:600; font-family:var(--font-disp); font-size:15px;}
+  ul.gaps li{margin-bottom:6px;}
+  .persona-footer{font-family:var(--font-mono); font-size:11.5px; color:var(--muted); margin-top:20px; border-top:1px solid var(--line); padding-top:14px;}
+  @media print{
+    header.cover{background:var(--secondary) !important; -webkit-print-color-adjust:exact; print-color-adjust:exact;}
+    body{background:#fff;}
+    .card{box-shadow:none;}
+  }
+</style>
+</head>
+<body>
+
+<header class="cover">
+  <div class="inner">
+    <div class="eyebrow">Persona Summary · Persona Builder skill · July 2026</div>
+    <h1>Fiddler AI — CISO</h1>
+    <div class="meta">fiddler.ai · Category: AI Control Plane · Motion: Sales-led enterprise + PLG on-ramp</div>
+    <div class="caveat">Fiddler's own site never names "CISO" directly — this persona is synthesized from its published Security &amp; Trust, Approver, and Executive-buyer roles plus governance-heavy site messaging. Flagged here, not presented as on-site language.</div>
+  </div>
+</header>
+
+<div class="persona">
+
+  <div class="card">
+    <h3>Persona Overview</h3>
+    <p><strong>Role in the buying process:</strong> Approver / risk-owning executive — not the initial champion (that's Head of AI/ML), but a required sign-off gate for the Governance/GRC play, and pulled in early on the Guardrails/Trust play once data-leakage or jailbreak exposure is on the table.</p>
+    <p><strong>Key titles:</strong> CISO, VP Security, Head of Security &amp; Trust, Chief Risk Officer (regulated-industry variant), Chief AI Officer (where security and AI risk ownership are combined)</p>
+    <p><strong>ICP context:</strong> Enterprise, regulated-industry-heavy — Fiddler's named base skews financial services, insurance, and public sector (Mastercard, Ally, American Family, Elevance Health, DTCC, U.S. Navy) — exactly where a CISO holds hard sign-off authority over production AI/agent traffic.</p>
+  </div>
+
+  <div class="card">
+    <h3>What They Care About</h3>
+    <h4>Core Pain Points</h4>
+    <ul>
+      <li>Production LLM/agent apps create an ungoverned attack surface — prompt injection, jailbreaks, PII/PHI leakage — existing AppSec tooling wasn't built to see.</li>
+      <li>Passive monitoring isn't enough: detecting a leak after it happened doesn't satisfy a prevention mandate.</li>
+      <li>Regulatory mapping is fragmented — EU AI Act, HIPAA, SR 11-7, NIST AI RMF, ISO/IEC 42001, NAIC each demand different evidence.</li>
+      <li>Vendor sprawl — guardrail scanners, red-team tools, and prompt-firewalls each cover a slice, none give one governed control point.</li>
+      <li>No clean audit trail from "what did the agent do" to "what can we prove to a regulator."</li>
+      <li>Security is structurally a step behind fast-moving AI/ML engineering teams shipping agents.</li>
+    </ul>
+    <h4>Desired Outcomes</h4>
+    <ul>
+      <li>Inline, preventative enforcement on every production agent's request/response path.</li>
+      <li>One auditable governance layer mapped to frameworks that already apply to the business.</li>
+      <li>One control plane instead of a patchwork of point security tools.</li>
+      <li>Enforcement that doesn't cost latency or block engineering velocity.</li>
+      <li>Provable, exportable audit/incident-response evidence on demand.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Metrics That Matter</h3>
+    <p>Guardrail/enforcement latency (&lt;80ms claimed) · Jailbreak-block precision / toxic-content detection rate · Time to produce an audit trail · Incident response time for AI-related events · Number of point tools consolidated · % of production traffic actually enforced (not just monitored)</p>
+  </div>
+
+  <div class="card">
+    <h3>Messaging Pillars (CISO Lens)</h3>
+    <div class="pillar"><strong>Prevention over passive evaluation</strong> — <em>"The system of trust for your agents."</em><p>Inline, enforcing controls on the request/response path — blocking harmful outputs and PII/PHI/secrets exposure before they leave the system, not a dashboard that tells you after the fact.</p></div>
+    <div class="pillar"><strong>Auditable governance, mapped to real regulation</strong> — <em>"Protect from risks. Maximize ROI."</em><p>Explicit mapping to NIST AI RMF, ISO/IEC 42001, HIPAA, SR 11-7, NAIC, and the EU AI Act, plus a continuous audit trail — turns "we have an AI governance program" into something handed directly to an auditor.</p></div>
+    <div class="pillar"><strong>One control plane, not another point tool</strong> — <em>Play #6: Enterprise Control Plane / Consolidation</em><p>Replaces a patchwork of guardrail scanners, prompt-firewalls, and observability point tools with one governed layer — a vendor-reduction argument as much as a capability one.</p></div>
+  </div>
+
+  <div class="card">
+    <h3>Proof Points</h3>
+    <div class="proof-confirmed"><strong>U.S. Navy (PMS 408):</strong> 97% reduction in time to update ATR models.</div>
+    <div class="proof-confirmed"><strong>Nielsen:</strong> 99% jailbreak-block precision / 100% toxic-content detection.</div>
+    <div class="proof-confirmed"><strong>SOC 2 Type 2 and HIPAA</strong> compliance — baseline trust signals checked first.</div>
+    <div class="proof-confirmed"><strong>30M+ traces/day</strong> at Fortune-20 scale.</div>
+    <div class="proof-confirmed">Named regulated customers: Mastercard, Ally, American Family, Elevance Health, DTCC, U.S. Navy.</div>
+    <div class="proof-confirmed">Validated by Forrester (x2), Gartner Market Guide, IDC ProductScape, CB Insights (Leader, AI Agent Security &amp; Risk Management), FirstMark MAD 2025, a DIU success memo.</div>
+    <div class="proof-directional">No CISO-attributed named quote surfaced yet — testimonials skew Head of AI/ML.<span class="tag">Directional</span></div>
+    <div class="proof-directional">No published dollar-quantified cost-avoidance figure — detailed ROI sits behind gated case studies.<span class="tag">Directional</span></div>
+    <div class="proof-directional">No independent third-party pentest/red-team report surfaced publicly.<span class="tag">Directional</span></div>
+  </div>
+
+  <div class="card">
+    <h3>Objection Handling</h3>
+    <table>
+      <tr><th>Objection</th><th>Response</th></tr>
+      <tr><td>"We already have a prompt-security tool (Lakera, Protect AI, CalypsoAI)."</td><td>Those cover a slice of the attack surface. Fiddler is the governed control plane across the whole agent fleet — enforcement, observability, and audit trail in one place.</td></tr>
+      <tr><td>"Our cloud provider already has this built in (Azure AI, Bedrock, Vertex)."</td><td>Platform-native controls stop at that platform's boundary. Most enterprises run agents across multiple clouds/models — one policy, one audit trail, regardless of vendor.</td></tr>
+      <tr><td>"This will add latency to production agents."</td><td>Enforcement runs inline at under 80ms — built to sit in the request/response path without becoming the bottleneck engineering routes around.</td></tr>
+      <tr><td>"How do we know this blocks attacks, not just logs them?"</td><td>Nielsen's validated numbers — 99% jailbreak-block precision, 100% toxic-content detection — are enforcement outcomes, not detection-rate marketing.</td></tr>
+      <tr><td>"We need this mapped to our specific regulatory obligations."</td><td>Direct mapping to NIST AI RMF, ISO/IEC 42001, HIPAA, SR 11-7, NAIC, and the EU AI Act — built for the audit conversation, not generic AI safety.</td></tr>
+      <tr><td>"We're managing enough AI/security vendor sprawl already."</td><td>That's the Enterprise Control Plane play directly — positioned to replace the patchwork, not add to it.</td></tr>
+    </table>
+  </div>
+
+  <div class="card">
+    <h3>Headline Copy</h3>
+    <ul class="headline">
+      <li>"The system of trust for your agents."</li>
+      <li>"Protect from risks. Maximize ROI."</li>
+      <li>"Prevention, not passive evaluation — enforcement in under 80ms."</li>
+      <li>"Mapped to NIST AI RMF, ISO/IEC 42001, HIPAA, SR 11-7, and the EU AI Act."</li>
+      <li>"99% jailbreak-block precision. Validated at Nielsen."</li>
+      <li>"SOC 2 Type 2. HIPAA. Built for regulated AI, at Fortune-20 scale."</li>
+      <li>"One control plane. Not another point tool."</li>
+      <li>"97% faster model updates for the U.S. Navy."</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Email Outreach Notes</h3>
+    <p><strong>Tone:</strong> Evidence-driven, risk-literate, skeptical of AI-hype framing. Lead with regulatory specificity and hard enforcement numbers, not category language.<br>
+    <strong>Length:</strong> Under 150 words, asset embedded, ends with a meeting/demo request.<br>
+    <strong>Cadence:</strong> 5–7 business days between touches.</p>
+    <p><strong>Angle by title:</strong><br>
+    CISO / VP Security — prevention vs. passive monitoring, regulatory mapping, audit-trail completeness, vendor consolidation.<br>
+    Chief Risk Officer — named-regulation mapping (SR 11-7, NAIC, HIPAA), incident-response time.<br>
+    Chief AI Officer — control-plane consolidation, enforcement latency, scale proof.</p>
+  </div>
+
+  <div class="card">
+    <h3>Assets Available</h3>
+    <ul>
+      <li>AI Control Plane Buyer's Guide</li>
+      <li>TCO Calculator</li>
+      <li>SOC 2 Type 2 and HIPAA compliance documentation</li>
+      <li>Analyst validation: Forrester (x2), Gartner Market Guide, IDC ProductScape, CB Insights AI 100 / Security &amp; Risk Management Leader report, FirstMark MAD 2025</li>
+      <li>Nielsen and U.S. Navy (PMS 408) case studies</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>Persona-Specific Nuance</h3>
+    <p>A CISO is rarely the deal's starting point — Head of AI/ML or a Platform/MLOps champion typically initiates, with Security pulled in once the app is headed toward production or a compliance deadline forces the question. Lead with the prevention-vs-monitoring distinction and named regulatory frameworks before any category language — generic "AI governance" pitches get filtered out fast by a buyer who reviews vendor security claims for a living.</p>
+  </div>
+
+  <div class="card gaps">
+    <h3>Gaps to Fill</h3>
+    <ul class="gaps">
+      <li>A named, attributed CISO or security-leadership quote (current references skew Head of AI/ML)</li>
+      <li>A dollar-quantified cost-avoidance or risk-reduction figure (currently gated/unpublished)</li>
+      <li>An independent third-party penetration-test or red-team validation report</li>
+      <li>Confirmation of exact SOC 2 report scope/date and any FedRAMP status, given the U.S. Navy reference</li>
+    </ul>
+  </div>
+
+  <div class="persona-footer">Last updated: July 2026 · Internal use only — Fiddler AI GTM · Sources: Fiddler AI GTM Brand Overview artifact (July 2026); fiddler.ai homepage and /control-plane, verified July 2026.</div>
+
+</div>
+</body>
+</html>
