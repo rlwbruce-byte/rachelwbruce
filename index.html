@@ -65,6 +65,10 @@
     text-transform:uppercase; letter-spacing:.06em; color:var(--pink); background:transparent; text-decoration:none;
     padding:11px 20px; border-radius:2px; border:1.5px solid var(--pink); transition:all .15s ease; font-weight:600; }
   .btn-samples:hover{ background:var(--pink); color:var(--ink); }
+  .availability{ margin-top:24px; padding:14px 18px; border-left:3px solid var(--pink); background:rgba(238,47,139,.09); max-width:920px; }
+  .availability .avail-label{ font-family:var(--mono); font-size:11px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--pink); display:block; margin-bottom:6px; }
+  .availability p{ font-size:15.5px; line-height:1.6; color:#eae6df; }
   .hero-divider{ margin-top:44px; border-top:2px solid var(--pink); }
 
   /* nav */
@@ -182,11 +186,15 @@
   <div class="contact-line">Buffalo Grove, IL <span class="contact-sep">·</span> <a href="mailto:rlwbruce@gmail.com">rlwbruce@gmail.com</a> <span class="contact-sep">·</span> <a href="tel:+18476095800">847-609-5800</a> <span class="contact-sep">·</span> <a href="https://www.linkedin.com/in/rachelwbruce/" target="_blank" rel="noopener">linkedin.com/in/rachelwbruce</a></div>
   <div class="hero-cta">
     <a class="btn-download" href="Rachel-Bruce-Resume.pdf" download>↓ Download Resume (PDF)</a>
-    <a class="btn-samples" href="https://gtmanatomy.ai/" target="_blank" rel="noopener">↗ View Samples</a>
+    <a class="btn-samples" href="https://gtmanatomy.ai/" target="_blank" rel="noopener">↗ Visit GTMAnatomy</a>
   </div>
   <p class="bio">AI-native marketing leader who sets the strategy, runs the plays, and optimizes the engine.</p>
-  <p class="bio">Over 15 years, Rachel has run the full demand mix &mdash; paid media, channel and partner marketing, events, field marketing, account-based marketing, and outbound &mdash; alongside brand, product marketing, and marketing operations. She is operational and data-driven: every program ships with an owner, a number to hit, and a repeatable way to run it again.</p>
-  <p class="bio">Rachel's experience is proven across the company lifecycle. She has elevated the brand and GTM strategy (Continuous), scaled through acquisition (Moogsoft), and transformed a global marketing organization (Trustwave). She builds and leads high-performing teams of up to 14 with budgets exceeding $3.5M, and designs the proprietary AI systems that multiply the output of lean ones.</p>
+  <p class="bio">Over 15 years, Rachel has run the full demand mix &mdash; paid media, channel and partner marketing, events, field marketing, account-based marketing (ABM), and outbound &mdash; alongside brand, product marketing, and marketing operations. She is operational and data-driven: every program ships with an owner, a number to hit, and a repeatable way to run it again.</p>
+  <p class="bio">Rachel's experience is proven across the company lifecycle. She has elevated brand and go-to-market (GTM) strategy at Continuous, scaled through acquisition at Moogsoft, and transformed a global marketing organization at Trustwave. She builds and leads high-performing teams of up to 14 with budgets exceeding $3.5M, and designs the proprietary AI systems that multiply the output of lean ones.</p>
+  <div class="availability">
+    <span class="avail-label">Currently open to</span>
+    <p>Consulting engagements, fractional leadership, and full-time revenue marketing leadership roles.</p>
+  </div>
   <div class="hero-divider"></div>
 </div>
 <div class="section-nav">
@@ -254,7 +262,7 @@
 const COMPETENCIES = [
   {title:"GTM Strategy & Execution", text:"Owns GTM and full-funnel strategy — aligning programs to pipeline goals and optimizing through data to run the most profitable integrated campaigns.", link:["Start-Up/Scale-Up","Revenue Marketing"]},
   {title:"AI Native", text:"Designs and deploys proprietary AI systems — agent workflows, automation, and knowledge bases — that multiply the output of marketing teams.", link:["AI & Tech"]},
-  {title:"Demand Creation", text:"Builds and executes high-impact marketing programs across ABM, PLG, channel, paid media, and field — driving pipeline, funnel velocity, and business goals.", link:["Revenue Marketing"]},
+  {title:"Demand Creation", text:"Builds and executes high-impact marketing programs across ABM, product-led growth (PLG), channel, paid media, and field — driving pipeline, funnel velocity, and business goals.", link:["Revenue Marketing"]},
   {title:"Leadership", text:"Manages, develops, and career-paths team members — clear roles, KPIs, and an environment built for high achievement.", link:["Start-Up/Scale-Up"]},
   {title:"Positioning & Messaging", text:"Develops differentiated messaging and positioning statements focused on solution selling, proof points, and clear personas.", link:["Product Marketing"]},
   {title:"Thought Leadership", text:"Builds executive voice and category authority through analyst engagement, press, and content that shapes how the market thinks about the problem.", link:["Product Marketing"]},
@@ -281,12 +289,12 @@ const DATA = [
   {
     company:"Continuous", role:"VP of Marketing", dates:"Sept 2025 – Sept 2026",
     context:"SaaS startup building embedded revenue infrastructure for companies with complex quote-to-revenue models (Salesforce ISV Partner, NetSuite SDN Partner).",
-    scope:["Team of 1 + 3 agencies","$1.0M budget"],
+    scope:["Reported to CEO","Team of 1 + 3 agencies","$1.0M budget"],
     bullets:[
       {text:"Transformed the marketing function from the ground up — rebranding and owning messaging, demand generation, content, and revenue operations.", tags:["Start-Up/Scale-Up","Product Marketing"]},
       {text:"Designed and shipped a proprietary AI-GTM operating system — nine custom agents for workflow efficiency (prospect research, competitor intelligence, ad copy, outreach, content, campaign planning, LinkedIn, performance reporting) on a company knowledge base, packaged as an internal Claude Code plugin — automating work equivalent to 3 marketers.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
       {text:"Productized a three-product portfolio and built the surrounding launch materials and GTM programs, from positioning through enablement.", tags:["Product Marketing","Start-Up/Scale-Up"]},
-      {text:"Built the demand generation and SDR functions from the ground up — pairing direct hires with automated outbound, paid search, paid social, webinars, and events — scaling the database 250% and generating the company's first direct inbound leads.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
+      {text:"Built the demand generation and sales development (SDR) functions from the ground up — pairing direct hires with automated outbound, paid search, paid social, webinars, and events — scaling the database 250% and generating the company's first direct inbound leads.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
       {text:"Launched the company's video content strategy complete with a promotion engine — going from 0 to 23 videos, finally letting prospects visualize the solution.", tags:["Revenue Marketing"]},
       {text:"Managed founder and corporate social presence, building the CEO's executive thought-leadership voice and corporate channel — growing LinkedIn following 830% and AI/LLM brand visibility 94%.", tags:["Product Marketing"]},
       {text:"Automated competitor intelligence across 9 direct competitors with a daily monitoring pipeline, publishing shareable reports the sales team accesses without needing repo access.", tags:["Product Marketing"]},
@@ -297,12 +305,12 @@ const DATA = [
   {
     company:"Plus One Robotics", role:"Head of Marketing", dates:"Dec 2023 – Sept 2025",
     context:"Series C AI-vision & robotics company — hardware, software, and services for warehouse automation and logistics.",
-    scope:["Team of 3 + 4 agencies","$1.2M budget"],
+    scope:["Reported to CEO & President","Team of 3 + 4 agencies","$1.2M budget"],
     bullets:[
       {text:"Led end-to-end marketing, revenue operations, sales enablement, and sales development functions with a team of three.", tags:["Start-Up/Scale-Up"]},
       {text:"Increased partner referrals by 250% after launching a channel route-to-market, transforming the acquisition strategy from a founder-led company to a growth-stage company.", tags:["Partner/Channel"]},
       {text:"Formalized the demand generation function, delivering $4.0M in sourced pipeline (150% to goal) via ABM, paid media, channel marketing, and SDR outreach.", tags:["Revenue Marketing"]},
-      {text:"Owned full-stack product marketing across hardware, AI-vision software, and services — positioning, messaging, and GTM strategy with ICPs for InductOne and DepalOne.", tags:["Product Marketing"]},
+      {text:"Owned full-stack product marketing across hardware, AI-vision software, and services — positioning, messaging, and GTM strategy with Ideal Customer Profiles (ICPs) for InductOne and DepalOne.", tags:["Product Marketing"]},
       {text:"Partnered with Product, Sales, and Finance to build scalable GTM frameworks, launch plans, and sales enablement resources. Together these accelerated time to market, product adoption, and partner engagement.", tags:["Product Marketing","Start-Up/Scale-Up"]},
       {text:"Elevated brand and product positioning through thought leadership, analyst engagement, association participation, and 100+ earned media placements in year one.", tags:["Product Marketing","Start-Up/Scale-Up"]},
       {text:"Managed over a dozen field and virtual events annually; collaborated with partners to amplify presence through booth placements, after-hours events, speaking sessions, and coordinated social proof efforts.", tags:["Partner/Channel"]},
@@ -312,7 +320,7 @@ const DATA = [
   {
     company:"Nday Security", role:"Strategic Advisor & Board Member (Fractional CMO)", dates:"Aug 2023 – Mar 2025",
     context:"Pre-seed cybersecurity start-up delivering offensive security and testing services via an AI-driven SaaS platform.",
-    scope:["Pre-seed","Bootstrapped"],
+    scope:["Reported to CEO","Pre-seed","Bootstrapped"],
     note:"Advisory · not on current resume",
     bullets:[
       {text:"Served as fractional CMO, leading brand development, product positioning, and full-cycle marketing execution from scratch.", tags:["Start-Up/Scale-Up","Product Marketing"]},
@@ -323,9 +331,9 @@ const DATA = [
   {
     company:"Moogsoft (acquired by Dell)", role:"Senior Director, Head of Marketing", dates:"Nov 2022 – Aug 2023",
     context:"VC-backed Series E AIOps platform acquired by Dell Technologies.",
-    scope:["Team of 4 + 2 Agencies","$1.5M budget","Exit to acquisition"],
+    scope:["Reported to CRO","Team of 4 + 2 Agencies","$1.5M budget","Exit to acquisition"],
     bullets:[
-      {text:"Led GTM transformation from product-led growth (PLG) to ABM, delivering over 60% of sourced pipeline.", tags:["Start-Up/Scale-Up","Revenue Marketing"]},
+      {text:"Led GTM transformation from PLG to ABM, delivering over 60% of sourced pipeline.", tags:["Start-Up/Scale-Up","Revenue Marketing"]},
       {text:"Built integrated marketing programs leveraging commissioned research reports, aligning paid media and SDR strategy for conversion rate optimization.", tags:["Revenue Marketing"]},
       {text:"Owned product marketing strategy — platform repositioning, messaging architecture, and field enablement through updated collateral and sales tools.", tags:["Product Marketing"]},
       {text:"Elevated brand credibility with thought leadership content and analyst engagement (Gartner), shaping the AIOps category.", tags:["Product Marketing"]},
@@ -334,9 +342,9 @@ const DATA = [
   {
     company:"Very Good Security (VGS)", role:"Director of Demand Generation", dates:"Oct 2021 – Nov 2022",
     context:"Venture-backed Series C fintech and data security company. Team of 8, budget $2.7M.",
-    scope:["Team of 8","$2.7M budget"],
+    scope:["Reported to CMO","Team of 8","$2.7M budget"],
     bullets:[
-      {text:"Delivered 80% of total pipeline through marketing-sourced programs (inbound and outbound), achieving a 60% SQL-to-opportunity conversion rate and 40% win rate on marketing-sourced opportunities.", tags:["Revenue Marketing"]},
+      {text:"Delivered 80% of total pipeline through marketing-sourced programs (inbound and outbound), achieving a 60% Sales Qualified Lead (SQL) to opportunity conversion rate and 40% win rate on marketing-sourced opportunities.", tags:["Revenue Marketing"]},
       {text:"Partnered with product to launch a PLG motion targeting DevOps audiences, using product usage data to optimize trial-to-paid conversion.", tags:["Revenue Marketing"]},
       {text:"Advanced operational maturity — deployed Marketo, intent data platforms (ZoomInfo, G2), and advanced SFDC capabilities; improved lead scoring, attribution, signal tracking, funnel visibility, and campaign performance.", tags:["Revenue Marketing"]},
       {text:"Aligned closely with alliance partners like AWS to deliver high-converting marketing programs.", tags:["Partner/Channel"]},
@@ -345,20 +353,20 @@ const DATA = [
   {
     company:"Trustwave", role:"Marketing Director, Americas and EMEA", dates:"June 2019 – April 2021",
     context:"Global cybersecurity company — MSSP, MDR, Security Testing, Email Security & more.",
-    scope:["Team of 14","$3.5M budget","Promoted to cover EMEA"],
+    scope:["Reported to CRO","Team of 14","$3.5M budget","Promoted to cover EMEA"],
     bullets:[
       {text:"Led a 14-person global demand generation team across the Americas and EMEA; managed an annual budget exceeding $3.5M for full-funnel marketing execution.", tags:["Revenue Marketing"]},
       {text:"Owned GTM strategy across enterprise, SMB, and channel segments, delivering $9M in sourced pipeline through a diversified campaign mix (ABM, digital, field, partner marketing).", tags:["Revenue Marketing"]},
       {text:"Transformed global event strategy — RSA, Black Hat, Gartner Security & Risk Summit — shifting from sponsorships to immersive, journey-based experiences that increased lead conversion and sales alignment.", tags:["Revenue Marketing"]},
       {text:"Directed partner and channel marketing, driving 5x total contract value (TCV) growth through integrated programs with Microsoft, Netskope, Palo Alto Networks, and Cybereason.", tags:["Partner/Channel"]},
-      {text:"Built global reporting infrastructure from rep-level dashboards to executive ROMI insights; instituted KPI tracking, lead processes, and operational standards; responsible for board-reporting and QBRs.", tags:["Revenue Marketing"]},
+      {text:"Built global reporting infrastructure from rep-level dashboards to executive Return on Marketing Investment (ROMI) insights; instituted KPI tracking, lead processes, and operational standards; responsible for board-reporting and QBRs.", tags:["Revenue Marketing"]},
       {text:"Developed and mentored a high-performing team, career-pathing 6+ high-potential hires into roles across demand gen, sales, and operations.", tags:["Start-Up/Scale-Up"]},
     ]
   },
   {
     company:"Telecom Brokerage Inc. (TBI)", role:"Senior Digital Marketing Manager", dates:"July 2014 – June 2019",
     context:"Technology services distributor (master agent) — telecommunications, cloud, and managed services.",
-    scope:["Team of 3","Promoted to Sr. Manager"],
+    scope:["Reported to Director of Marketing","Team of 3","Promoted to Sr. Manager"],
     bullets:[
       {text:"Promoted to Senior Manager, leading a team of three and serving on the cross-functional Operational Efficiency Task Force; built the digital marketing and marketing operations functions from the ground up.", tags:["Revenue Marketing","Start-Up/Scale-Up"]},
       {text:"Led a cross-functional team across product, tech, and partner stakeholders to launch a Through-Channel Marketing Automation (TCMA) platform, giving channel partners turnkey, co-branded demand programs at scale.", tags:["Partner/Channel"]},
